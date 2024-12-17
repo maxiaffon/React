@@ -1,0 +1,36 @@
+/* ItemDetailContainer.scss */
+
+/* Estilo para el contenedor del detalle del producto */
+.product-detail-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.product-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00aaff; /* Celeste para el título */
+  margin-bottom: 1rem;
+}
+
+.product-price {
+  font-size: 1.3rem;
+  color: #ffd700; /* Amarillo para el precio */
+  margin-bottom: 1rem;
+}
+
+.product-description {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}

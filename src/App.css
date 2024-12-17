@@ -1,42 +1,44 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+/* Contenedor principal de la app */
+.container-app {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   padding: 2rem;
-  text-align: center;
+  margin-top: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Estilos del NavBar */
+.navbar {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.navbar a {
+  color: #0091ea;
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 0 1rem;
+  font-weight: 600;
 }
 
-.card {
-  padding: 2em;
+.navbar a:hover {
+  color: #007bb5;
 }
 
-.read-the-docs {
-  color: #888;
+/* Espaciado adicional para que el contenido no quede debajo del navbar */
+.item-list-container {
+  padding-top: 80px;
 }
