@@ -1,72 +1,68 @@
-/* ItemListContainer.scss */
+$blue-samsung: #003b5c;
+$blue-light: #0092d1;
+$blue-dark: #005b8a;
+$grey-light: #f1f1f1;
 
-/* Contenedor de los productos */
 .item-list-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Adaptable a diferentes tamaños de pantalla */
-  gap: 1.5rem;
-  padding: 2rem; /* Espaciado alrededor de las cards */
-  justify-items: center; /* Centra las cards en la pantalla */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; 
+  gap: 15px; 
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 60px; 
 }
 
-/* Card de producto */
 .product-card {
   background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 1rem;
-  height: 300px; /* Fijamos una altura menor para hacerla más pequeña */
-  width: 250px; /* Fijamos un ancho menor para hacerla más pequeña */
-  overflow: hidden; /* Asegura que nada se desborde */
-}
-
-/* Ajuste de imagen para que no se deforme ni salga de la card */
-.product-image {
-  width: 80px; /* Imagen más pequeña */
-  height: 80px;
-  object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+  padding: 20px;
   border-radius: 8px;
-  display: block; /* Elimina cualquier espacio debajo de la imagen */
-  margin-bottom: 1rem;
-}
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 230px; 
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e5e5e5; 
 
-.product-card-content {
-  margin-top: 1rem;
-  padding: 0 1rem;
-}
-
-.product-title {
-  font-size: 1.1rem; /* Titulo más pequeño */
-  color: #333;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.product-description {
-  color: #777;
-  font-size: 0.8rem; /* Descripción más pequeña */
-  margin-bottom: 1rem;
-}
-
-.product-price {
-  font-size: 1rem; /* Precio más pequeño */
-  font-weight: bold;
-  color: #0091ea;
-}
-
-/* Responsividad */
-@media (max-width: 768px) {
-  .item-list-container {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Hacemos las cards más pequeñas en pantallas pequeñas */
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
 
-  .product-card {
-    width: 100%; /* Para pantallas pequeñas, las cards se ajustan al 100% */
-    max-width: 250px;
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: $blue-samsung;
+  }
+
+  .product-price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: $blue-light; 
+    margin: 10px 0;
+  }
+
+  a {
+    font-size: 1rem;
+    color: $blue-dark; 
+    text-decoration: none;
+    border: 2px solid $blue-dark;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: $blue-dark;
+      color: #fff;
+    }
   }
 }

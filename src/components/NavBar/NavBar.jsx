@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CardWidget from "../CardWidget/CardWidget"; // Importa el CardWidget
+import CardWidget from "../CardWidget/CardWidget"; 
 import "./navbar.scss";
 
 const NavBar = () => {
@@ -20,7 +20,7 @@ const NavBar = () => {
         <li><Link to="/category/Computacion">Computación</Link></li>
         <li><Link to="/category/Electrodomesticos">Electrodomésticos</Link></li>
       </ul>
-      <CardWidget /> {/* Aquí se incluye el CardWidget */}
+      <CardWidget /> 
     </nav>
   );
 };

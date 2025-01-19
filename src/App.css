@@ -11,34 +11,3 @@
   margin-top: 0;
 }
 
-/* Estilos del NavBar */
-.navbar {
-  width: 100%;
-  background-color: #ffffff;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}
-
-.navbar a {
-  color: #0091ea;
-  text-decoration: none;
-  font-size: 1rem;
-  margin: 0 1rem;
-  font-weight: 600;
-}
-
-.navbar a:hover {
-  color: #007bb5;
-}
-
-/* Espaciado adicional para que el contenido no quede debajo del navbar */
-.item-list-container {
-  padding-top: 80px;
-}

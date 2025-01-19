@@ -1,36 +1,109 @@
-/* ItemDetailContainer.scss */
+$product-primary: #287271; 
+$product-hover: #1f5e59; 
+$product-background: #f9f9f9;
+$product-dark: #333; 
+$product-light: #666; 
+$border-radius: 8px; 
+$button-padding: 8px 16px;
+$button-size: 1.1rem; 
+$max-width: 800px; 
 
-/* Estilo para el contenedor del detalle del producto */
 .product-detail-container {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: $product-background;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 80px;
 
-.product-image {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
+ 
+  .product-image {
+    width: 280px; 
+    height: 280px; 
+    object-fit: cover;
+    border-radius: $border-radius;
+    margin-bottom: 15px;
+  }
 
-.product-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #00aaff; /* Celeste para el título */
-  margin-bottom: 1rem;
-}
+ 
+  .product-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $product-dark;
+    margin-bottom: 10px;
+    text-align: center;
+  }
 
-.product-price {
-  font-size: 1.3rem;
-  color: #ffd700; /* Amarillo para el precio */
-  margin-bottom: 1rem;
-}
 
-.product-description {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.5;
+  .product-price {
+    font-size: 1.4rem;
+    color: $product-primary;
+    margin-bottom: 15px;
+  }
+
+  
+  .product-description {
+    font-size: 1rem;
+    color: $product-light;
+    text-align: center;
+    margin-bottom: 20px;
+    max-width: 750px;
+  }
+
+  
+  .product-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+
+    .add-to-cart-button {
+      padding: $button-padding;
+      background-color: $product-primary;
+      color: white;
+      font-size: $button-size;
+      font-weight: bold;
+      border: none;
+      border-radius: $border-radius;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%; 
+
+      &:hover {
+        background-color: $product-hover;
+      }
+    }
+
+    
+    .quantity-buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 10px;
+
+      .increment-button,
+      .decrement-button {
+        padding: 8px 12px;
+        background-color: $product-primary;
+        color: white;
+        font-size: $button-size;
+        border: none;
+        border-radius: $border-radius;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 45%; 
+
+        &:hover {
+          background-color: $product-hover;
+        }
+      }
+    }
+  }
 }
