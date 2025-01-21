@@ -1,28 +1,35 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { CartContext } from "../../context/CartContext";
 import ItemCount from "../ItemCount/ItemCount"; 
 import { Link, useParams } from "react-router-dom";
-import { products } from "../../data/products";
+import { fetchProductFromFirebase } from "../../db/db";
 import "./ItemDetailContainer.scss";
 
 const ItemDetailContainer = () => {
+  
+  const [showItemCount, setShowItemCount] = useState(true);
+  const [product, setProduct] = useState(null); 
+  const { idProduct } = useParams();
+  const { addProduct } = useContext(CartContext);
 
-  //estado para controlar si se muestra o no el componente item count
-  const [showItemCount, setShowItemCount] = useState(true)
-  const { idProduct } = useParams(); 
-  const product = products.find((product) => product.id === Number(idProduct));
+ 
+  useEffect(() => {
+    const getProduct = async () => {
+      const productFromFirebase = await fetchProductFromFirebase(idProduct); 
+      setProduct(productFromFirebase); 
+    };
+
+    getProduct(); 
+  }, [idProduct]); 
 
   if (!product) {
     return <p>El producto con ID {idProduct} no fue encontrado.</p>;
   }
 
-  const { addProduct } = useContext(CartContext);
-  
   const addProductInCart = (count) => {
     const productCart = { ...product, quantity: count };
-    addProduct(productCart);
-    //cambiamos el estado para que se deje de mostrar ItemCount
-    setShowItemCount(false)
+    addProduct(productCart); 
+    setShowItemCount(false); 
   };
 
   return (
@@ -32,11 +39,12 @@ const ItemDetailContainer = () => {
       <p className="product-price">${product.price}</p>
       <p className="product-description">{product.description}</p>
       {
-        showItemCount === true ? (
+        showItemCount ? (
           <ItemCount stock={product.stock} AddProductInCart={addProductInCart} />
-          ) : ( 
-          <Link to="/cart">Fiinalizar compra </Link>
-          )}
+        ) : (
+          <Link to="/cart">Finalizar compra</Link>
+        )
+      }
     </div>
   );
 };
