@@ -10,6 +10,7 @@ const FormCheckout = ( { dataForm, handleChangeInput, handleSubmitForm } ) => {
             value={dataForm.fullName} 
             name="fullName" 
             onChange={handleChangeInput} 
+            required
           />
          
           <label>Numero de telefono</label>
@@ -18,6 +19,7 @@ const FormCheckout = ( { dataForm, handleChangeInput, handleSubmitForm } ) => {
             value={dataForm.phone} 
             name="phone" 
             onChange={handleChangeInput} 
+            required
           />
 
           <label>Email</label>
@@ -26,6 +28,7 @@ const FormCheckout = ( { dataForm, handleChangeInput, handleSubmitForm } ) => {
             value={dataForm.email} 
             name="email" 
             onChange={handleChangeInput} 
+            required
           />
 
           <button type="submit">Enviar</button>
